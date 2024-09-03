@@ -1,6 +1,6 @@
 
 // rrd imports
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 // library import
 import { toast } from "react-toastify";
@@ -10,6 +10,7 @@ import Table from "../components/Table";
 
 // helpers
 import { deleteItem, fetchData } from "../helpers";
+import { HomeIcon } from "@heroicons/react/24/solid";
 
 // loader
 export async function expensesLoader() {
@@ -51,6 +52,13 @@ const ExpensesPage = () => {
             ) : (
                 <p>No Expenses to show</p>
             )}
+            <Link
+                to="/"
+                className="btn btn--dark"
+            >
+                <HomeIcon width={20} />
+                <span>Go home</span>
+            </Link>
         </div>
     );
 };
